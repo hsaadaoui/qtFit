@@ -1,0 +1,1038 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>qtFit Documentation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="tutorial.tex"> 
+<meta name="date" content="2015-04-21 18:30:00"> 
+<link rel="stylesheet" type="text/css" href="tutorial.css"> 
+</head><body 
+>
+<div class="maketitle">
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+
+<h2 class="titleHead">qtFit&#x00A0;Documentation</h2>
+<div class="author" ><span 
+class="ecrm-1200">Hassan Saadaoui</span>
+<br /><a 
+href="mailto:saadaoui@triumf.ca" ><span 
+class="ectt-0900">saadaoui@triumf.ca</span></a></div>
+<br />
+<div class="date" ><span 
+class="ecrm-1200">April 21, 2015</span></div>
+</div>
+<div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 70--><p class="noindent" >
+<!--l. 70--><p class="noindent" ><span 
+class="ecbx-0900">Abstract</span></div>
+     <!--l. 71--><p class="noindent" ><span 
+class="ectt-1000">qtFit</span>&#x00A0;is a program used to fit ASCII data. The graphical user interface (GUI) of  <span 
+class="ectt-1000">qtFit</span>&#x00A0;is
+     designed using <span 
+class="ectt-1000">QT</span>&#x00A0;software. The regression is done using CERN&#8217;s <span 
+class="ectt-1000">MINUIT</span>&#x00A0;routine and plotting is
+     perfomed with the <span 
+class="ectt-1000">QCustomPlot</span>&#x00A0;library. This document is a manual of the <span 
+class="ectt-1000">qtFit</span>&#x00A0;program, and
+     includes instructions about installation, features description, and how-to-use examples.
+</div>
+<h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Contents</h3>
+<div class="tableofcontents">
+<span class="sectionToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">Introduction</a></span>
+<br /><span class="sectionToc" >2 <a 
+href="#x1-30002" id="QQ2-1-4">Requirements and structure</a></span>
+<br /><span class="sectionToc" >3 <a 
+href="#x1-40003" id="QQ2-1-5">Installation</a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.1 <a 
+href="#x1-50003.1" id="QQ2-1-6"><span 
+class="ectt-1000">QT</span></a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.2 <a 
+href="#x1-60003.2" id="QQ2-1-7"><span 
+class="ectt-1000">MINUIT</span></a></span>
+<br />&#x00A0;<span class="subsectionToc" >3.3 <a 
+href="#x1-70003.3" id="QQ2-1-8"><span 
+class="ectt-1000">qtFit</span></a></span>
+<br /><span class="sectionToc" >4 <a 
+href="#x1-80004" id="QQ2-1-9">Description of the GUI</a></span>
+<br />&#x00A0;<span class="subsectionToc" >4.1 <a 
+href="#x1-90004.1" id="QQ2-1-10">Menu bar</a></span>
+<br />&#x00A0;<span class="subsectionToc" >4.2 <a 
+href="#x1-100004.2" id="QQ2-1-12">Regression</a></span>
+<br />&#x00A0;<span class="subsectionToc" >4.3 <a 
+href="#x1-170004.3" id="QQ2-1-25">Results</a></span>
+                                                                                          
+                                                                                          
+<br />&#x00A0;<span class="subsectionToc" >4.4 <a 
+href="#x1-180004.4" id="QQ2-1-27">Graphics</a></span>
+<br />&#x00A0;<span class="subsectionToc" >4.5 <a 
+href="#x1-190004.5" id="QQ2-1-29">Database</a></span>
+<br /><span class="sectionToc" >5 <a 
+href="#x1-200005" id="QQ2-1-31">Fitting functions</a></span>
+<br /><span class="sectionToc" >6 <a 
+href="#x1-210006" id="QQ2-1-32">How-To-Use examples</a></span>
+<br />&#x00A0;<span class="subsectionToc" >6.1 <a 
+href="#x1-220006.1" id="QQ2-1-33">Example 1</a></span>
+<br />&#x00A0;<span class="subsectionToc" >6.2 <a 
+href="#x1-230006.2" id="QQ2-1-34">Example 2</a></span>
+</div>
+                                                                                          
+                                                                                          
+<!--l. 87--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-20001"></a>Introduction</h3>
+<!--l. 88--><p class="noindent" ><span 
+class="ectt-1000">qtFit</span>&#x00A0;is used to search, view, and analyze ASCII data. It can be extended by the user to read any type of data.
+This program is developed by Hassan Saadaoui and is maintained as needed. It is open source and released under the
+General Public License (GPL). No warranty or guarantee of the results is implied. Please acknowledge
+the author if you are using this program. For any questions, please email at <a 
+href="mailto:saadaoui@triumf.ca" ><span 
+class="ectt-1000">saadaoui@triumf.ca</span></a>.
+<hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-20011"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 90--><p class="noindent" ><img 
+src="regression.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1: </span><span  
+class="content">Regression page of the <span 
+class="ectt-1000">qtFit</span>&#x00A0;graphical user interface.</span></div><!--tex4ht:label?: x1-20011 -->
+                                                                                          
+                                                                                          
+<!--l. 93--><p class="noindent" ></div><hr class="endfigure">
+                                                                                          
+                                                                                          
+<h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-30002"></a>Requirements and structure</h3>
+<!--l. 100--><p class="noindent" >The program is written in <span 
+class="ectt-1000">C++</span>&#x00A0;and <span 
+class="ectt-1000">QT</span>. The latter is used for general programming as well as the graphical user
+interface. Version 4.8.x or 5.x is needed. The regression is done using <span 
+class="ectt-1000">MINUIT</span>&#x00A0;minimization routine developed at
+CERN. This package is originally in Fortran and later converted to <span 
+class="ectt-1000">C++</span>. It is very powerful and well tested.
+<span 
+class="ectt-1000">QCustomPlot</span>&#x00A0;library (included within the package) is used for data visualization. In addition to the above
+requirements, and depending on your system, you may also need other packages such as <span 
+class="ectt-1000">gcc </span>compiler, and <span 
+class="ectt-1000">automake</span>.
+The <span 
+class="ectt-1000">qtFit</span>&#x00A0;package contains 4 sub-folders and 5 files.
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">src/</span></span></span>: contains the source code, and includes the shared <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">main.cpp</span></span></span>, and <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">mainwindow.(cpp,ui,h)</span></span></span> and
+     a sub-folder for each page.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">fct/</span></span></span> contains the fitting functions and the script "<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">compile</span></span></span>" to execute the codes and create the
+     libraries.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">etc/</span></span></span> for documentation, images, data, scripts and templates, and the resources.qrc file needed by <span 
+class="ectt-1000">QT</span>.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">bin/</span></span></span> where the execution binary data is dumped.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">qtfit.pro</span></span></span> used to generate the makefile.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">AUTHOR</span></span></span> for authorship attributions.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">COPYING</span></span></span> supplies the GPL agreement.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">README.md</span></span></span> for installation instructions.</li></ul>
+<!--l. 120--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-40003"></a>Installation</h3>
+<!--l. 122--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-50003.1"></a><span 
+class="ectt-1000">QT</span></h4>
+<!--l. 123--><p class="noindent" >Download the <span 
+class="ectt-1000">QT</span>&#x00A0;on-line installer from <a 
+href="http://www.qt.io/download-open-source/" class="url" ><span 
+class="ectt-1000">http://www.qt.io/download-open-source/</span></a>. You need to install <span 
+class="ectt-1000">QT</span>&#x00A0;4.X.X
+or <span 
+class="ectt-1000">QT</span>&#x00A0;5.x binary and source packages.
+<!--l. 127--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-60003.2"></a><span 
+class="ectt-1000">MINUIT</span></h4>
+<!--l. 127--><p class="noindent" >To compile, do the following steps.
+                                                                                          
+                                                                                          
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-6002x1">Download latest Minuit2 located at<br 
+class="newline" /><a 
+href="http://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/release/download.html" class="url" ><span 
+class="ectt-1000">http://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/release/download.html</span></a>
+     </li>
+     <li 
+  class="enumerate" id="x1-6004x2">Unpack and cd <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;tar</span><span 
+class="ectt-1000">&#x00A0;-xvf</span><span 
+class="ectt-1000">&#x00A0;minuit.tar.gz</span><span 
+class="ectt-1000">&#x00A0;-C</span><span 
+class="ectt-1000">&#x00A0;~/</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;cd</span><span 
+class="ectt-1000">&#x00A0;~/minuit</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x1-6006x3">To install follow the instructions at <br 
+class="newline" /><a 
+href="http://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/gettingStarted/autoconf.html" class="url" ><span 
+class="ectt-1000">http://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/gettingStarted/autoconf.html</span></a>
+     </li>
+     <li 
+  class="enumerate" id="x1-6008x4">Make SURE that the tests in the tutorial are running as described in the link <br 
+class="newline" /><a 
+href="http://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/gettingStarted/testOutput.html" class="url" ><span 
+class="ectt-1000">http://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/gettingStarted/testOutput.html</span></a>
+     </li>
+     <li 
+  class="enumerate" id="x1-6010x5">Copy (as superuser) the miniut libraries from <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">minuit/src/.lib/liblcg_Minuit.*</span></span></span> to <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">/usr/lib/</span></span></span> <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;sudo</span><span 
+class="ectt-1000">&#x00A0;cp</span><span 
+class="ectt-1000">&#x00A0;minuit/src/.lib/liblcg_Minuit.*</span><span 
+class="ectt-1000">&#x00A0;/usr/lib/</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x1-6012x6">Update ldconfig<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;sudo</span><span 
+class="ectt-1000">&#x00A0;ldconfig</span></span></span></li></ol>
+<!--l. 146--><p class="noindent" ><span 
+class="ecbx-1000">Extra notes</span>: It is somewhat a challenge to compile Minuit2. These extra notes maybe useful.
+     <ul class="itemize1">
+     <li class="itemize">Depending on your system, you may need to modify few codes namely src/MnUserTransformation.cpp
+     to  add  <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">#include</span><span 
+class="ectt-1000">&#x00A0;&#x003C;cstdio&#x003E;</span></span></span> or  <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">#include</span><span 
+class="ectt-1000">&#x00A0;&#x003C;cstdio.h&#x003E;</span></span></span> just  below  <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">#include</span><span 
+class="ectt-1000">&#x00A0;&#x003C;algorithm&#x003E;</span></span></span> and
+     re-compile.
+     </li>
+     <li class="itemize">Locate  where  libraries  and  header  files  are,  hopefully  in  <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">/usr/local/include/Minuit2</span></span></span>,  and
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">/usr/local/lib/</span></span></span>
+     </li>
+     <li class="itemize">Add the path <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">/usr/local/lib/</span></span></span> to <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">/etc/ld.so.conf</span></span></span> as described here <a 
+href="http://stackoverflow.com/questions/1099981/why-cant-python-find-shared-objects-that-are-in-directories-in-sys-path" class="url" ><span 
+class="ectt-1000">http://stackoverflow.com/questions/1099981/why-cant-python-find-shared-objects-that-are-in-directories-in-sys-path</span></a><br 
+class="newline" /><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;export</span><span 
+class="ectt-1000">&#x00A0;LD_LIBRARY_PATH=/usr/local/lib</span></span></span> <br 
+class="newline" />or <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;export</span><span 
+class="ectt-1000">&#x00A0;LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH</span></span></span>
+     </li>
+     <li class="itemize">Run ldconfig <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;sudo</span><span 
+class="ectt-1000">&#x00A0;ldconfig</span></span></span></li></ul>
+<!--l. 164--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x1-70003.3"></a><span 
+class="ectt-1000">qtFit</span></h4>
+<!--l. 165--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-7002x1">Download the latest <span 
+class="ectt-1000">qtFit</span>&#x00A0;from local computers, sourceforge, or github.<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;wget</span></span></span> <span 
+class="ectt-1000">https://sourceforge.net/projects/qtfit/files/qtfit.tar.gz/download</span>
+                                                                                          
+                                                                                          
+     </li>
+     <li 
+  class="enumerate" id="x1-7004x2">Unpack it <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$tar</span><span 
+class="ectt-1000">&#x00A0;-xvf</span></span></span> <span 
+class="ectt-1000">qtfit.tar.gz</span>&#x00A0;<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">-C</span><span 
+class="ectt-1000">&#x00A0;~/</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x1-7006x3">cd to the downloaded package <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;cd</span><span 
+class="ectt-1000">&#x00A0;~/qtfit</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x1-7008x4">If <span 
+class="ectt-1000">QT</span>&#x00A0;binaries are not in your path, set the env (locate where qmake is) <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;PATH=/usr/Qt/5.4/gcc_64/bin:$PATH</span><span 
+class="ectt-1000">&#x00A0;</span></span></span> (change <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"/usr/Qt/5.4/gcc_64/bin"</span></span></span> as per your system) <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;export</span><span 
+class="ectt-1000">&#x00A0;PATH</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x1-7010x5">Run qmake <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;qmake</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x1-7012x6">Run make and make install (as root) <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;make</span></span></span> <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;sudo</span><span 
+class="ectt-1000">&#x00A0;make</span><span 
+class="ectt-1000">&#x00A0;install</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x1-7014x7">cd to directory <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">fct/</span></span></span> and compile all the libraries using the script compile <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;cd</span><span 
+class="ectt-1000">&#x00A0;fct</span></span></span> <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;sudo</span><span 
+class="ectt-1000">&#x00A0;./compile</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x1-7016x8">To test the gui, invoke <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;qtfit</span></span></span> <br 
+class="newline" />or <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">$</span><span 
+class="ectt-1000">&#x00A0;./qtfit</span></span></span> if not installed as root.</li></ol>
+<!--l. 196--><p class="noindent" >
+                                                                                          
+                                                                                          
+<h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-80004"></a>Description of the GUI</h3>
+<!--l. 198--><p class="noindent" >The GUI has a menu bar at the very top and a tab widget below it. This tab widget contains 4 tabs
+(pages): <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Regression</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Results</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Plotting</span></span></span>, and <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Archive</span></span></span>. Each of these contains widgets for user input
+and push buttons for issuing signals. The menu bar and the pages functionalities will be described
+next.
+<h4 class="subsectionHead"><span class="titlemark">4.1   </span> <a 
+ id="x1-90004.1"></a>Menu bar</h4>
+<!--l. 203--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-90012"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 204--><p class="noindent" ><img 
+src="menubar.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2: </span><span  
+class="content">Menubar of the GUI.</span></div><!--tex4ht:label?: x1-90012 -->
+                                                                                          
+                                                                                          
+<!--l. 207--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 208--><p class="noindent" ><span 
+class="ecbx-1000">File </span>has 2 options; (i) invoke a new window, and (ii) quit/close the window.
+<!--l. 210--><p class="noindent" ><span 
+class="ecbx-1000">Edit </span>is empty for now, not finished...zzz.
+<!--l. 212--><p class="noindent" ><span 
+class="ecbx-1000">View </span>to change the widget type of the GUI (default is <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">fuse</span></span></span>+), and its color (default is <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Green-white"</span></span></span>).
+<!--l. 215--><p class="noindent" ><span 
+class="ecbx-1000">Plotting </span>not finished...zzzz.
+<!--l. 217--><p class="noindent" ><span 
+class="ecbx-1000">Help </span>This contains the <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"About"</span></span></span> dialog for authorship and version of the current GUI, <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Tips"</span></span></span> dialog which does
+nothing but remind the user that by hovering the mouse index onto labels one can get the tool-tips for each widget.
+<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Tutorial"</span></span></span> invokes an HTML page with these instructions.
+<h4 class="subsectionHead"><span class="titlemark">4.2   </span> <a 
+ id="x1-100004.2"></a>Regression</h4>
+<!--l. 224--><p class="noindent" >
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-110004.2"></a>Data input</h5>
+<!--l. 225--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-110013"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 226--><p class="noindent" ><img 
+src="dataline.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;3: </span><span  
+class="content">Data input of the regression page.</span></div><!--tex4ht:label?: x1-110013 -->
+                                                                                          
+                                                                                          
+<!--l. 229--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 230--><p class="noindent" >The user can choose to fit either ASCII text data or something else, for now it is only ASCII. The user can locate the
+data using the tool button next to Data for ASCII files. The data file must reside in the working directory, otherwise
+its full name with path should be given. Filenames of the data to fit should be either given in the lineEdit (direct
+method); or using a file of <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">.list</span></span></span> or <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">.inf</span></span></span> suffix, and the user specifies the name of this file (eg: example.list or
+example.inf) in the lineEdit.
+     <ul class="itemize1">
+     <li class="itemize">Direct     input,     the     user     can     write     in     the     lineEdit     "Data"     something     like
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"file1.txt,file2.txt,file3.txt"</span></span></span>
+     </li>
+     <li class="itemize">Indirect input, the user can write in the lineEdit "Data" something like <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">example.list</span></span></span>, and this file
+     has nothing but a single ascii line like <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"file1.txt,file2.txt,file3.txt"</span></span></span>
+     </li>
+     <li class="itemize">Indirect input, the user can write in the lineEdit "Data" something like <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">example.inf</span></span></span>, and this file
+     contains the columns<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">filenames</span><span 
+class="ectt-1000">&#x00A0;year</span><span 
+class="ectt-1000">&#x00A0;variable</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">file1.txt</span><span 
+class="ectt-1000">&#x00A0;2015</span><span 
+class="ectt-1000">&#x00A0;100</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">file2.txt</span><span 
+class="ectt-1000">&#x00A0;2014</span><span 
+class="ectt-1000">&#x00A0;200</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">file3.txt</span><span 
+class="ectt-1000">&#x00A0;2015</span><span 
+class="ectt-1000">&#x00A0;300</span></span></span><br 
+class="newline" /></li></ul>
+<!--l. 243--><p class="noindent" >The inner format of the ASCII file must be set in the field <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">format</span></span></span>. The file must be in column format separated by
+space and no other characters than numbers. The limits of xmin and xmax values can be set in the options (settings)
+field. These must be numbers separated by commas.
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-120004.2"></a>Fitting selection</h5>
+<!--l. 252--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-120014"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 253--><p class="noindent" ><img 
+src="analyze-fct.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;4: </span><span  
+class="content">Fitting functions input.</span></div><!--tex4ht:label?: x1-120014 -->
+                                                                                          
+                                                                                          
+<!--l. 256--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 258--><p class="noindent" >The user can select the function to use, the mode of fitting (single or global) and type of errors. The functions are
+defined in the folder <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">fct/</span></span></span> and the user can add new ones by invoking the selection <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Create</span><span 
+class="ectt-1000">&#x00A0;New"</span></span></span> in the functions
+comboBox. The user must follow the instructions in the pop-up window and then select <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Update"</span></span></span> from the
+comboBox. This will add the newly defined function to the list.
+<!--l. 260--><p class="noindent" >For the global method the user can choose to show all parameters for each run or not. These settings can be changed
+by double clicking on the initial parameters tab-widget.
+<!--l. 262--><p class="noindent" >The errors are defined by <span 
+class="ectt-1000">MINUIT</span>&#x00A0;routine, and are symmetric (Migrad) or asymmetric (Minos) errors. The latter are
+heavy to compute and the program may become unresponsive for sometime while the computation is ongoing. For
+further details read <a 
+href="http://seal.web.cern.ch/seal/documents/minuit/mnerror.pdf" class="url" ><span 
+class="ectt-1000">http://seal.web.cern.ch/seal/documents/minuit/mnerror.pdf</span></a>.
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-130004.2"></a>Results output</h5>
+<!--l. 267--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-130015"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 268--><p class="noindent" ><img 
+src="analyze-res.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;5: </span><span  
+class="content">Fitting results output.</span></div><!--tex4ht:label?: x1-130015 -->
+                                                                                          
+                                                                                          
+<!--l. 271--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 272--><p class="noindent" >The fitting results are written to this file. The user must specify a name, or browse for an old file. The results can be
+either appended (using <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Append</span></span></span>) to the old file keeping its content (useful for doing run by run fitting), or the old file
+is overwritten using <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Rewrite</span></span></span>.
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-140004.2"></a>Parameters input</h5>
+<!--l. 278--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-140016"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 280--><p class="noindent" ><img 
+src="analyze-table-s.png" alt="PIC"  
+> <img 
+src="analyze-table-g.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;6: </span><span  
+class="content">Input parameters for (a) single and (b) global fits. (a) The fit starts from this table for each file, or
+from the results of the last file in the sequence enabled by double clicking on the <span 
+class="ectt-1000">"initial parameters"</span>. (b)
+If a parameter is shared between files, only the parameter of the first run is active and the same parameter
+for other files becomes inactive.</span></div><!--tex4ht:label?: x1-140016 -->
+                                                                                          
+                                                                                          
+<!--l. 284--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 285--><p class="noindent" >The initial parameters are read from the function library. The table contains 5 columns for the single method,
+and 6 columns for the global method. These columns are; (1) parameter name, (2) initial value of the
+parameter, (3) lower limit, (4) upper limit, (5) fix the parameter checkBox, and (6) share the parameter
+checkBox.
+<!--l. 288--><p class="noindent" >These parameters can be changed, and saved in a template for future use by right-clicking on the specific table and
+then choose <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"save</span><span 
+class="ectt-1000">&#x00A0;as</span><span 
+class="ectt-1000">&#x00A0;a</span><span 
+class="ectt-1000">&#x00A0;template"</span></span></span>. This creates a text file template with a prefix <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">".tab"</span></span></span>. The user can change this
+text file as required, and the template can be loaded later for a similar function.
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-150004.2"></a>Parameters output</h5>
+<!--l. 292--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-150017"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 294--><p class="noindent" ><img 
+src="analyze-res-g.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;7: </span><span  
+class="content">Results of a global fit where the shared parameter is Amplitude.</span></div><!--tex4ht:label?: x1-150017 -->
+                                                                                          
+                                                                                          
+<!--l. 297--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 298--><p class="noindent" >This prints out the output of the fit. The number of significant figures can be set by double-clicking
+on the results tab. One can also change the number of errors to show, and the way the filename is
+displayed.
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-160004.2"></a>Input and output options</h5>
+<!--l. 302--><p class="noindent" >The window shown in figure <a 
+href="#x1-160018">8<!--tex4ht:ref: fig-top --></a> can be invoked by double clicking on the header of the parameters table. In the
+pop-up window, the user can choose to show the parameters for all files in the case of a global fit, or use a
+common template for all files. The user can also choose to start the fit with the results of best fitting
+parameters of the previous file in the sequence (only valid for single fit). For the output table, the user
+can choose the format of the filename label, parameters precision, and number of errors to display.
+<hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-160018"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 311--><p class="noindent" ><img 
+src="tableoptions.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;8: </span><span  
+class="content">Input and output options.</span></div><!--tex4ht:label?: x1-160018 -->
+                                                                                          
+                                                                                          
+<!--l. 314--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 318--><p class="noindent" >
+                                                                                          
+                                                                                          
+<h4 class="subsectionHead"><span class="titlemark">4.3   </span> <a 
+ id="x1-170004.3"></a>Results</h4>
+<!--l. 320--><p class="noindent" >This page reads the files of fitting parameters created by the analysis page. It displayed a table with two columns,
+the left column represents the x-axis and the right column the y-axis. Each column contains all fields found in the
+specified file (as created during the fitting).
+<!--l. 323--><p class="noindent" >The user can check any of the fields, and a matrix of plots of y versus x will be displayed. The user can clear all
+choices using <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Clear"</span></span></span>, and kill/delete the active table using <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Purge"</span></span></span>.
+<!--l. 325--><p class="noindent" >The plots will be displayed on the Graphics page. Horizontal or vertical error bars are displayed if specified in the
+chosen parameter.
+<!--l. 327--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-170019"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 329--><p class="noindent" ><img 
+src="resultstop.png" alt="PIC"  
+> <img 
+src="resultsbottom.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;9: </span><span  
+class="content">Results page snapshots.</span></div><!--tex4ht:label?: x1-170019 -->
+                                                                                          
+                                                                                          
+<!--l. 333--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 341--><p class="noindent" >
+                                                                                          
+                                                                                          
+<h4 class="subsectionHead"><span class="titlemark">4.4   </span> <a 
+ id="x1-180004.4"></a>Graphics</h4>
+<!--l. 343--><p class="noindent" >The plots of the regression page and results pages are displayed here. The user can <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">export</span></span></span> the graphs
+into png or pdf, or <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Purge/Clear</span></span></span> (delete) the active window(s), or go the archive database with <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Next</span></span></span>.
+<hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-1800110"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 348--><p class="noindent" ><img 
+src="graphics.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;10: </span><span  
+class="content">Graphics page.</span></div><!--tex4ht:label?: x1-1800110 -->
+                                                                                          
+                                                                                          
+<!--l. 351--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 356--><p class="noindent" >
+                                                                                          
+                                                                                          
+<h4 class="subsectionHead"><span class="titlemark">4.5   </span> <a 
+ id="x1-190004.5"></a>Database</h4>
+<!--l. 358--><p class="noindent" >This page offers a user-friendly interface for databases, and uses SQLite language
+<a 
+href="http://www.tutorialspoint.com/sqlite/sqlite_overview.htm" class="url" ><span 
+class="ectt-1000">http://www.tutorialspoint.com/sqlite/sqlite_overview.htm</span></a>. At the start, the user must select a database by
+clicking on the toolButton next to <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Database"</span></span></span>, or create a new one from the <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Querry"</span></span></span> lineEdit using SQL
+commands and hitting <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Execute"</span></span></span>. It is advised to use an SQL manager (like the friendly browser extension SQLite
+manager) to create databases and tables. Then, one can use this interface to add/delete rows and edit cells, interact
+with the content of the database. But an experienced user can do everything from this page as well by executing the
+<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Querry"</span></span></span> commands. Te get familiar with the interface, <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"physics.sqlite"</span></span></span> is supplied. Each contain several
+tables. The user can load any of these tables from the comboBox, and a model of the table will be
+displayed.
+<!--l. 365--><p class="noindent" >The user can execute any query to study the loaded table. Example;<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">SELECT</span><span 
+class="ectt-1000">&#x00A0;*</span><span 
+class="ectt-1000">&#x00A0;FROM</span><span 
+class="ectt-1000">&#x00A0;table_of_constants</span><span 
+class="ectt-1000">&#x00A0;where</span><span 
+class="ectt-1000">&#x00A0;Unit="kg"</span></span></span> will select all fields in the <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">table_of_constants</span></span></span> where the
+unit is in kg. The user must be familiar with SQL to execute from the Query field. Any table can be changed by
+adding or deleting rows. Also each cell can be edited, or displayed by clicking on <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Open"</span></span></span>. This can be used to display
+a cell with a lot of text or view the cell as image if the full path of the image was given in that cell.
+<hr class="figure"><div class="figure" 
+>
+                                                                                          
+                                                                                          
+<a 
+ id="x1-1900111"></a>
+                                                                                          
+                                                                                          
+
+<!--l. 368--><p class="noindent" ><img 
+src="archive.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;11: </span><span  
+class="content">Database interface loaded with a table of physical constants.</span></div><!--tex4ht:label?: x1-1900111 -->
+                                                                                          
+                                                                                          
+<!--l. 371--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 377--><p class="noindent" >
+                                                                                          
+                                                                                          
+<h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-200005"></a>Fitting functions</h3>
+<!--l. 379--><p class="noindent" >The user can write his own fitting functions in the directory <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">fct/</span></span></span>. A new function must be written in <span 
+class="ectt-1000">C++</span>&#x00A0;but
+requires minimal programming knowledge of this language. At template of a typical function is as follows:
+<!--l. 383-->
+<div class="lstlisting" id="listing-1"><span class="label"><a 
+ id="x1-20001r1"></a></span>#include&#x00A0;&#x003C;iostream&#x003E;&#x00A0;<br /><span class="label"><a 
+ id="x1-20002r2"></a></span>#include&#x00A0;&#x003C;fstream&#x003E;&#x00A0;<br /><span class="label"><a 
+ id="x1-20003r3"></a></span>#include&#x00A0;&#x003C;math.h&#x003E;&#x00A0;<br /><span class="label"><a 
+ id="x1-20004r4"></a></span>#include&#x00A0;&#x003C;stdio.h&#x003E;&#x00A0;<br /><span class="label"><a 
+ id="x1-20005r5"></a></span>#include&#x00A0;&#x003C;vector&#x003E;&#x00A0;<br /><span class="label"><a 
+ id="x1-20006r6"></a></span>#include&#x00A0;&#x003C;sstream&#x003E;&#x00A0;<br /><span class="label"><a 
+ id="x1-20007r7"></a></span>#include&#x00A0;&#x003C;string.h&#x003E;&#x00A0;<br /><span class="label"><a 
+ id="x1-20008r8"></a></span>#include&#x00A0;&#x003C;iostream&#x003E;&#x00A0;<br /><span class="label"><a 
+ id="x1-20009r9"></a></span>using&#x00A0;namespace&#x00A0;std;&#x00A0;<br /><span class="label"><a 
+ id="x1-20010r10"></a></span>#include&#x00A0;"parameters.h"&#x00A0;<br /><span class="label"><a 
+ id="x1-20011r11"></a></span>&#x00A0;<br /><span class="label"><a 
+ id="x1-20012r12"></a></span><span 
+class="ecti-1000">//</span><span 
+class="ecti-1000">Wrap</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">in</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">"</span><span 
+class="ecti-1000">C</span><span 
+class="ecti-1000">"</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">for</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">the</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">compiler</span><span 
+class="ecti-1000">.</span>&#x00A0;<br /><span class="label"><a 
+ id="x1-20013r13"></a></span>extern&#x00A0;"C"&#x00A0;<br /><span class="label"><a 
+ id="x1-20014r14"></a></span>{&#x00A0;<br /><span class="label"><a 
+ id="x1-20015r15"></a></span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">//</span><span 
+class="ecti-1000">The</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">defalt</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">initial</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">parameters</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">loaded</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">to</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">the</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">table</span><span 
+class="ecti-1000">.</span>&#x00A0;<br /><span class="label"><a 
+ id="x1-20016r16"></a></span>&#x00A0;&#x00A0;void&#x00A0;defaultParameters(Parameters&#x00A0;&amp;defaults)&#x00A0;<br /><span class="label"><a 
+ id="x1-20017r17"></a></span>&#x00A0;&#x00A0;{&#x00A0;<br /><span class="label"><a 
+ id="x1-20018r18"></a></span>&#x00A0;&#x00A0;&#x00A0;&#x00A0;defaults.addParameter(&#x00A0;"Amplitude"&#x00A0;,&#x00A0;0.2,&#x00A0;0.001,&#x00A0;0.15,&#x00A0;1.0&#x00A0;);<span 
+class="ecti-1000">//</span><span 
+class="ecti-1000">par</span><span 
+class="ecti-1000">[0]</span>&#x00A0;<br /><span class="label"><a 
+ id="x1-20019r19"></a></span>&#x00A0;&#x00A0;&#x00A0;&#x00A0;defaults.addParameter(&#x00A0;"Rate"&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;,&#x00A0;0.1,&#x00A0;0.001,&#x00A0;0.0,&#x00A0;&#x00A0;1.0&#x00A0;);<span 
+class="ecti-1000">//</span><span 
+class="ecti-1000">par</span><span 
+class="ecti-1000">[1]</span>&#x00A0;<br /><span class="label"><a 
+ id="x1-20020r20"></a></span>&#x00A0;&#x00A0;}&#x00A0;<br /><span class="label"><a 
+ id="x1-20021r21"></a></span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">//</span><span 
+class="ecti-1000">This</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">must</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">have</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">the</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">same</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">number</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">of</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">parameters</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">as</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">in</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">the</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">default</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">parameters</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">above</span><span 
+class="ecti-1000">.</span>&#x00A0;<br /><span class="label"><a 
+ id="x1-20022r22"></a></span>&#x00A0;&#x00A0;double&#x00A0;function(double&#x00A0;x,&#x00A0;const&#x00A0;std::vector&#x003C;double&#x003E;&#x00A0;par)&#x00A0;<br /><span class="label"><a 
+ id="x1-20023r23"></a></span>&#x00A0;&#x00A0;{&#x00A0;<br /><span class="label"><a 
+ id="x1-20024r24"></a></span>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;par[0]<span 
+class="cmsy-10">*</span>exp(&#x00A0;<span 
+class="cmsy-10">-</span>&#x00A0;par[1]<span 
+class="cmsy-10">*</span>x);<span 
+class="ecti-1000">//</span><span 
+class="ecti-1000">par</span><span 
+class="ecti-1000">[0]</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">is</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">amplitude</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">and</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">par</span><span 
+class="ecti-1000">[1]</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">is</span><span 
+class="ecti-1000">&#x00A0;</span><span 
+class="ecti-1000">rate</span><span 
+class="ecti-1000">.</span>&#x00A0;<br /><span class="label"><a 
+ id="x1-20025r25"></a></span>&#x00A0;&#x00A0;}&#x00A0;<br /><span class="label"><a 
+ id="x1-20026r26"></a></span>}
+</div>
+<!--l. 412--><p class="noindent" >The user must follow these instructions:
+     <ul class="itemize1">
+     <li class="itemize">Make a copy of the file <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">newFunction.cpp</span></span></span> found in <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">qtfit/etc/files</span></span></span>.
+     </li>
+     <li class="itemize">Rename the file (eg: newfct.cpp) and save it in the folder <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">qtfit/fct/</span></span></span>.
+     </li>
+     <li class="itemize">cd to the directory <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">qtfit/fct/</span></span></span>, and run the script "<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">compile</span></span></span>"" as root<br 
+class="newline" />&#x00A0;<span 
+class="cmr-10">$  </span><span 
+class="ectt-1000">sudo ./compile name </span>(eg: sudo ./compile newfct.cpp)</li></ul>
+<!--l. 419--><p class="noindent" >This compiles the library and puts a copy in the functions folder (<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">/usr/local/qtfit/fct/</span></span></span>).
+<!--l. 424--><p class="noindent" >
+                                                                                          
+                                                                                          
+<h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-210006"></a>How-To-Use examples</h3>
+<!--l. 426--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">6.1   </span> <a 
+ id="x1-220006.1"></a>Example 1</h4>
+<!--l. 427--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-22002x1">After the installation is complete, open the <span 
+class="ectt-1000">qtFit</span>&#x00A0;program from a terminal using the command <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">qtfit</span></span></span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-22004x2">Go to the page <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Regression</span></span></span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-22006x3">To  load  a  data  file,  click  on  the  toolButton  next  to  the  label  <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Data"</span></span></span>.  Browse  the  directory
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">qtfit/etc/files</span></span></span> and load the files <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">1070.dat</span></span></span> to <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">1072.dat</span></span></span>, (Hold-on Ctrl key to select more than one
+     file).
+     </li>
+     <li 
+  class="enumerate" id="x1-22008x4">Select <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">ASCII</span></span></span> under "type" comboBox, and <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">xydy</span></span></span> under format. Leave the <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Options</span></span></span> field empty for now.
+     </li>
+     <li 
+  class="enumerate" id="x1-22010x5">Under Fitting; select the function <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Exp</span></span></span> (for exponential fit), and format <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Single</span></span></span> (for single fits), and
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Migrad</span></span></span> (symmetric errors) for the type errors.
+     </li>
+     <li 
+  class="enumerate" id="x1-22012x6">Write  an  appropriate  name  for  the  output  file,  any  name  is  acceptable,  or  leave  it  as  default
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">results.fit</span></span></span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-22014x7">Click on <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Plot</span></span></span> pushButton at the bottom of the page to plot and view the selected files.
+     </li>
+     <li 
+  class="enumerate" id="x1-22016x8">Click on <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Fit</span></span></span> pushButton at the bottom of the page to perform the regression. If the fit converges, the
+     results of the fit will be displayed in a new table. Go to Graphics page to see the plots of the raw data
+     and fitting functions.
+     </li>
+     <li 
+  class="enumerate" id="x1-22018x9">Click on <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Next</span></span></span> to send the file <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">results.fit</span></span></span> to the results page. The columns of this file will be displayed,
+     and the user can choose to plot a column against the other. On the left, check the box of <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Amplitude</span></span></span>
+     as x variable, and on the right-side of the table check the box <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Rate</span></span></span> as y variable. Click on Plot, this
+     will plot Rate versus Amplitude. Go to the page Graphics to see the new plot. If you click on <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Clear</span></span></span>
+     all checkboxes will be unselected. If you click on <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Purge</span></span></span> all shown tables will be deleted. If you click on
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Next</span></span></span> the Graphics window will be shown.</li></ol>
+<!--l. 454--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">6.2   </span> <a 
+ id="x1-230006.2"></a>Example 2</h4>
+<!--l. 455--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-23002x1">To  load  a  ".inf"  file,  click  on  the  toolButton  next  to  the  label  <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">"Data"</span></span></span>.  Browse  the  directory
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">qtfit/etc/files</span></span></span> and load the file <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">example.inf</span></span></span>. The header of this file looks like this:<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">#FileName</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;Time(min)</span><span 
+class="ectt-1000">&#x00A0;Temperature(K)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">../etc/files/1070.dat</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;25</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;10,0.1</span></span></span> <br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">../etc/files/1071.dat</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;22</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;</span><span 
+class="ectt-1000">&#x00A0;20,0.3</span></span></span><br 
+class="newline" />In this example, the ".inf" file contains three colums defined in the header (preceded by the sign
+     <span 
+class="cmr-10">#</span>): the filename, a variable called Time in units of min, and a variable called Temperature in units
+     of K. The arguments of each columns are given in the next rows. For Temperature, the given value
+     is accompanied by the error. For example, "<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">10,0.1</span></span></span>" means Temperature <span 
+class="cmr-10">= 10 </span><span 
+class="cmsy-10">± </span><span 
+class="cmr-10">0</span><span 
+class="cmmi-10">.</span><span 
+class="cmr-10">1 </span>K for the file
+     1070.dat. In all columns (except the filename), the user can specify one or two errors (asymmetric),
+     and all numbers must be separated by a comma. For example, something like "<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">88,0.1,0.2</span></span></span>" means
+     Temperature <span 
+class="cmr-10">= [88 </span><span 
+class="cmsy-10">- </span><span 
+class="cmr-10">0</span><span 
+class="cmmi-10">.</span><span 
+class="cmr-10">1</span><span 
+class="cmmi-10">,</span><span 
+class="cmr-10">88 + 0</span><span 
+class="cmmi-10">.</span><span 
+class="cmr-10">2] </span>K.
+     </li>
+     <li 
+  class="enumerate" id="x1-23004x2">Repeat steps 4 to 9 in example 1.</li></ol>
+ 
+</body></html> 
+
+                                                                                          
+
+

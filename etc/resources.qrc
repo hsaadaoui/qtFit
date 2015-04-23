@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/cut.png</file>
+        <file>images/copy.png</file>
+        <file>images/new.png</file>
+        <file>images/open.png</file>
+        <file>images/paste.png</file>
+        <file>images/save.png</file>
+        <file>images/clean.png</file>
+        <file>images/exit.png</file>
+        <file>images/tips.png</file>
+        <file>images/tuto.png</file>
+        <file>files/newFunction.cpp</file>
+        <file>images/analyze.png</file>
+        <file>images/results.png</file>
+        <file>images/database.png</file>
+        <file>images/graphics.png</file>
+        <file>images/qtfit-logo.png</file>
+        <file>doc/tutorial.pdf</file>
+        <file>doc/tutorial.html</file>
+    </qresource>
+</RCC>

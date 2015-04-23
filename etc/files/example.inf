@@ -1,0 +1,8 @@
+#FileName Time(min) Temperature(K)
+../etc/files/1070.dat  25        10,0.1 
+../etc/files/1071.dat  22        20,0.3 
+../etc/files/1072.dat  21        30,0.3 
+../etc/files/1073.dat  15        40,0.2 
+../etc/files/1074.dat  45        60,0.3 
+../etc/files/1075.dat  22        80,0.4 
+../etc/files/1076.dat  29        100,0.5 
