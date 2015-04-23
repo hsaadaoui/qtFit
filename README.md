@@ -37,6 +37,7 @@ Installation instructions:
 
   $ sudo ldconfig
 
+
 3) qtfit:
 
 -i) cd to the downloaded package
@@ -46,6 +47,7 @@ $ cd ~/qtfit
 -ii) If Qt binaries are not in your path, set the env (Must locate where qmake is)
 
 $ PATH=/usr/Qt/5.4/gcc_64/bin:$PATH  (change "/usr/Qt/5.4/gcc_64/bin" as per your system)
+
 $ export
 
 -iii) Run qmake and make install (as root)
@@ -67,4 +69,4 @@ or
 
 $./qtfit if not installed as root.
 
--vii) Read the manual and repeat examples 1 and 2.
+-vii) Read the manual (etc/doc/manual.pdf) and try examples 1 and 2.
