@@ -39,7 +39,7 @@ FORMS       += mainwindow.ui \
                database.ui \
                graphics.ui
 
-BUILDDIR     = $$PWD/bin
+BUILDDIR     = $$PWD/.bin/
 OBJECTS_DIR  = $${BUILDDIR}
 MOC_DIR      = $${BUILDDIR}
 RCC_DIR      = $${BUILDDIR}

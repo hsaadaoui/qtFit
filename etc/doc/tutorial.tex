@@ -99,8 +99,7 @@
  \section{Requirements and structure}
 The program is written in \cpp\ and \qt. The latter is used for general programming as well as the graphical user interface.  Version 4.8.x or 5.x is needed. The regression is done using \minuit\ minimization routine developed
 at CERN. This package is originally in Fortran and later converted to \cpp. 
-It is very powerful and well tested. \qcp\ library (included within the package) is used for data visualization. In addition to the above requirements, and depending on your system, you may also need other packages such as \texttt{gcc} compiler, and
-\texttt{automake}. The \name\ package contains 4 sub-folders and 5 files.
+It is very powerful and well tested. \qcp\ library (included within the package) is used for data visualization. In addition to the above requirements, and depending on your system, you may also need other packages such as \texttt{gcc} compiler, and \texttt{automake}. The \name\ package contains 3 sub-folders and 5 files.
 \begin{itemize}
  \item \verb+src/+: contains the source code, and includes the shared \verb+main.cpp+, and 
  \verb+mainwindow.(cpp,ui,h)+ and a sub-folder for each page.
@@ -108,7 +107,6 @@ It is very powerful and well tested. \qcp\ library (included within the package)
  to execute the codes and create the libraries.
  \item \verb+etc/+ for documentation, images, data, scripts
 and templates, and the resources.qrc file needed by \qt.
-\item \verb+bin/+ where the execution binary data is dumped.
  \item \verb+qtfit.pro+ used to generate the makefile.
  \item  \verb+AUTHOR+ for authorship attributions.
  \item \verb+COPYING+ supplies the GPL agreement.
@@ -120,8 +118,8 @@ and templates, and the resources.qrc file needed by \qt.
 \section{Installation}
 % =============================================================================== 
 \subsection{\qt}
-Download the \qt\ on-line installer from \url{http://www.qt.io/download-open-source/}. 
 You need to install \qt\ 4.X.X or \qt\ 5.x binary and source packages.
+Download the \qt\ on-line installer from \url{http://www.qt.io/download-open-source/}. 
 
 % =============================================================================== 
 \subsection{\minuit}To compile, do the following steps.

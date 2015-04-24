@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Requirements and structure}{3}{section.2}
+\contentsline {section}{\numberline {3}Installation}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}\texttt {QT}}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}\texttt {MINUIT}}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}\texttt {qtFit}}{4}{subsection.3.3}
+\contentsline {section}{\numberline {4}Description of the GUI}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Menu bar}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Regression}{5}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Results}{8}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Graphics}{9}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Database}{10}{subsection.4.5}
+\contentsline {section}{\numberline {5}Fitting functions}{11}{section.5}
+\contentsline {section}{\numberline {6}How-To-Use examples}{12}{section.6}
+\contentsline {subsection}{\numberline {6.1}Example 1}{12}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Example 2}{12}{subsection.6.2}
