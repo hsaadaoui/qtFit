@@ -2,8 +2,6 @@ qtFit is used to do linear regression of data, plot/view the results, archive th
 
 No warranty or guarrantee of the results is implied.
 
-For any questions, please email at "saadaoui ^at^ triumf.ca".
-
 Installation instructions:
 
 1) Qt:
