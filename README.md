@@ -4,11 +4,11 @@ No warranty or guarrantee of the results is implied.
 
 Installation instructions:
 
-1) Qt:
+1.Qt
 
     - You need 5.x or 4.x.x installed. Download the Qt online installer from http://www.qt.io/download-open-source/ 
 
-2) Minuit
+2.Minuit
 
 -i) Download latest Minuit2 located at:
 
@@ -36,7 +36,7 @@ Installation instructions:
   $ sudo ldconfig
 
 
-3) qtfit:
+3. qtfit:
 
 -i) cd to the downloaded package
 
