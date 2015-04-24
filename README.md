@@ -30,7 +30,7 @@
 ###III. qtFit:
 
 1. cd to the downloaded package
-                $ cd ~/qtfit
+        $ cd ~/qtfit
 
 2. If Qt binaries are not in your path, set the env (Must locate where qmake is)
                 $ PATH=/usr/Qt/5.4/gcc_64/bin:$PATH  (change "/usr/Qt/5.4/gcc_64/bin" as per your system)
@@ -43,11 +43,11 @@
 
 4. cd to directory fct/ and compile all the libraries using the script compile
 		$ cd fct
-         	    $ sudo ./compile
+        $ sudo ./compile
 
 5. To start the GUI
-          $ qtfit
+        $ qtfit
 or
-          $./qtfit if not installed as root.
+        $./qtfit if not installed as root.
 
 6. Read the manual (etc/doc/tutorial.pdf) and try examples 1 and 2.
