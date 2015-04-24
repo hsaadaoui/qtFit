@@ -8,7 +8,7 @@
 
 ###II. Minuit
 
-1.Download latest Minuit2
+1. Download latest Minuit2
  
          http://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/release/download.html
   
