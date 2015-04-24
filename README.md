@@ -65,6 +65,6 @@ or
 
 6. Read the manual (etc/doc/tutorial.pdf) and try examples 1 and 2.
 
-![Regression](/https://github.com/hsaadaoui/qtFit/blob/master/etc/doc/regression.png)
+![Regression](https://github.com/hsaadaoui/qtFit/blob/master/etc/doc/regression.png?raw=true)
 
-![Graphics](/https://github.com/hsaadaoui/qtFit/blob/master/etc/doc/graphics.png)
+![Graphics](https://github.com/hsaadaoui/qtFit/blob/master/etc/doc/graphics.png?raw=true)
