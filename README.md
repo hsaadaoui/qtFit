@@ -8,7 +8,7 @@ Installation instructions:
 
 1) Qt:
 
-    Download the Qt online installer from http://www.qt.io/download-open-source/ and follow the instructions. You need 5.x or 4.x.x installed.
+    - You need 5.x or 4.x.x installed. Download the Qt online installer from http://www.qt.io/download-open-source/ 
 
 2) Minuit
 
