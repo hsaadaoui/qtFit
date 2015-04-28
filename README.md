@@ -1,4 +1,4 @@
-**qtFit** is used for regression, plotting, and archiving ASCII data. It is developed using Qt and C++. It uses CERN's [Minuit](https://seal.web.cern.ch/seal/MathLibs/Minuit2/html/) routine for performing regression,  [QCPplot](http://www.qcustomplot.com)  for visualization, and SQLite engine for archiving the results.
+**qtFit** is used for regression, plotting, and archiving of data. It is developed using Qt and C++. It uses CERN's [Minuit](https://seal.web.cern.ch/seal/MathLibs/Minuit2/html/) routine for performing regression,  [QCPplot](http://www.qcustomplot.com)  for visualization, and SQLite engine for archiving the results.
 
 ## Installation
 
